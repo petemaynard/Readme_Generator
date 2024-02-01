@@ -1,4 +1,3 @@
-// const express = require('express');
 const inquirer = require('inquirer');
 const fs = require('fs');
 const questions = require('./questions');
@@ -22,65 +21,44 @@ inquirer.prompt(questions)
       q8Github = answers.q8github;
       q9Email = answers.q9email
    })
-
    // Now compile all the answers into the README file
    .then(function () {
       makeReadme(q8Github, q9Email);
    });
 
-
-
 //Project Title
 function q1(answer1) {
    markupA1 = `# ${answer1}`;
-   // fs.appendFile('README.md', `${markupA1}\n`, (err) =>
-   //    err ? console.error(err) : console.log('A1 Commit logged!'));
-   //   console.log("markup1 is: ", markupA1); 
 }
 
 // Project Description
 function q2(answer2) {
    markupA2 = `## Description \n ${answer2}`;
-   // fs.appendFile('README.md', `${markupA2}\n`, (err) =>
-   //    err ? console.error(err) : console.log('A2 Commit logged!'));
-   // console.log("markup2 is: ", markupA2); 
 }
 
 // Installation Instructions
 function q3(answer3) {
    markupA3 = `## Installation \n ${answer3}`;
-   // fs.appendFile('README.md', `${markupA3}\n`, (err) =>
-   //    err ? console.error(err) : console.log('A3 Commit logged!'));
-   // console.log("markup3 is: ", markupA3); 
 }
 
 //Usage Information
 function q4(answer4) {
    markupA4 = `## Usage \n ${answer4}`;
-   // fs.appendFile('README.md', `${markupA4}\n`, (err) =>
-   //    err ? console.error(err) : console.log('A4 Commit logged!'));
-   // console.log("markupA4 is: ", markupA4);
 }
 
 // How to contribute
 function q5(answer5) {
    markupA5 = `## How to Contribute \n ${answer5}`;
-   // fs.appendFile('README.md', `${markupA5}\n`, (err) =>
-   //    err ? console.error(err) : console.log('A5 Commit logged!'));
-   // console.log("markupA5 is: ", markupA5);
 }
 
 
 // Testing instructions
 function q6(answer6) {
    markupA6 = `## Tests \n ${answer6}`;
-
-   // console.log("markupA6 is: ", markupA6);
 }
 
 // Which license
 function q7(answer7) {
-
    if (answer7 == 1) {
       badgeURL = "![MIT Badge](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)";
       markupA7 = ("## License.  \nThis software is available under the MIT license.")
@@ -96,12 +74,12 @@ function q7(answer7) {
 
 function makeReadme(github, email) {
    // This is where we compile all the data into a single file.
-   TOC=`## Table of Contents \n - [Description](#description) \n - [Installation](#installation) \n - [Usage](#usage) \n - [How to Contribute](#how-to-contribute) \n - [Tests](#tests) \n - [License](#license) \n - [Questions](#questions)`
+   TOC = `## Table of Contents \n - [Description](#description) \n - [Installation](#installation) \n - [Usage](#usage) \n - [How to Contribute](#how-to-contribute) \n - [Tests](#tests) \n - [License](#license) \n - [Questions](#questions)`
 
    markupA8 = (`## Questions \nMy GitHub account can be found at https://github.com/${github} \n`);
-   markupA9 = (`You can reach me at ${email}`)
-   finalMarkdown = [badgeURL, markupA1, TOC, markupA2, markupA3, markupA4, markupA5, markupA6, markupA7, markupA8, markupA9]
- 
+   markupA9 = (`You can reach me at ${email} with any questions.`)
+   let finalMarkdown = [badgeURL, markupA1, TOC, markupA2, markupA3, markupA4, markupA5, markupA6, markupA7, markupA8, markupA9]
+
    const pObj = finalMarkdown.join(nl);
 
    fs.unlink('README.md', (err) => {

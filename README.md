@@ -1,4 +1,4 @@
-![Creative Commons Badge](https://img.shields.io/badge/License-CC_BY-EF9421.svg?style=for-the-badge)
+![GNU Badge](https://img.shields.io/badge/License-GPL_3-blue.svg?style=for-the-badge)
 # 1
 ## Table of Contents 
  - [Description](#description) 
@@ -19,7 +19,7 @@
 ## Tests 
  6
 ## License.  
-This software is available under the Creative Commons license.
+This software is available under the GNU GPL v3 license.
 ## Questions 
 My GitHub account can be found at https://github.com/8 
 
